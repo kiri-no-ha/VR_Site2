@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Колледж в VR - пространство возможностей</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <script>document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('registration-form');
+        const messageDiv = document.getElementById('registration-message');
+    
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); 
+    
+    
+            const name = document.getElementById('name').value;
+            const group = document.getElementById('group').value;
+    
+            if (name.trim() === '' || group.trim() === '') {
+                messageDiv.className = 'message error';
+                messageDiv.textContent = 'Пожалуйста, заполните все поля.';
+                return; 
+            }
+    
+            
+            messageDiv.className = 'message success';
+            messageDiv.textContent = `Вы успешно зарегистрированы, ${name}! До встречи 13 сентября!`;
+    
+            // Очищаем форму 
+            form.reset();
+        });
+    });</script>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="image/logo.png" alt="Логотип">
+            </div>
+            <nav>
+                <a href="#about">О мероприятии</a>
+                <a href="#program">Программа</a>
+                <a href="#location">Место проведения</a> <!-- Added location link -->
+                <a href="#registration">Регистрация</a>
+                <a href="#online">Онлайн-трансляция</a>
+            </nav>
+            <a href="#registration" class="button primary">Принять участие</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>День программиста:</h1>
+            <h1>Колледж в VR — пространство возможностей</h1>
+            <p class="subtitle">Откройте для себя мир виртуальной реальности и узнайте, как VR меняет образование!</p>
+            <p class="date">13 сентября, 12:00 - 16:00</p>
+            <a href="#registration" class="button primary">Принять участие</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">О мероприятии</h2>
+            <strong><p class="section-description">Вас ждет увлекательное погружение в мир виртуальной реальности! Узнайте о применении VR в образовании, попробуйте современные VR-технологии и посетите мастер-классы от экспертов.</p></strong>
+            <div class="list-container">
+                <ul class="section-list">
+                    <li><i class="fas fa-vr-cardboard"></i> Интерактивные демонстрации VR-оборудования</li>
+                    <li><i class="fas fa-chalkboard-teacher"></i> Мастер-классы по созданию VR-контента</li>
+                    <li><i class="fas fa-lightbulb"></i> Обсуждение перспектив развития VR в образовании</li>
+                    <li><i class="fas fa-users"></i> Нетворкинг с экспертами и другими студентами</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="program" class="program">
+        <div class="container">
+            <h2 class="section-title">Программа мероприятия</h2>
+            <div class="list-container">  <!-- Added list-container div -->
+                <div class="schedule">
+                    <p><span class="time">12:00 - 12:20</span> Регистрация участников</p>
+                    <p><span class="time">12:20 - 12:30</span> Открытие и приветственное слово</p>
+                    <p><span class="time">12:30 - 13:20</span> Презентация "VR в образовании: новые горизонты"</p>
+                    <p><span class="time">13:20 - 13:30</span> Перерыв</p>
+                    <p><span class="time">13:30 - 14:30</span> Мастер-класс "Создание VR-приложений для начинающих"</p>
+                    <p><span class="time">14:30 - 15:00</span> Кофе-брейк и нетворкинг</p>
+                    <p><span class="time">15:00 - 16:00</span> VR-игры и свободное общение</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="location" class="location">
+        <div class="container">
+            <h2 class="section-title">Место проведения</h2>
+            <p class="location-info">Колледж Царицыно, актовый зал.</p>
+            <p class="location-address">Москва, Шипиловский проезд, д. 37, к. 1</p>
+        </div>
+    </section>
+
+    <section id="online" class="online-stream">
+        <div class="container">
+            <h2 class="section-title">Онлайн-трансляция</h2>
+            <p>Присоединяйтесь к нам онлайн!</p>
+            <a href="https://us04web.zoom.us/j/77506831720?pwd=IbgWs3xQanJjY8EPE6aYqM6MKoGaHL.1" target="_blank"
+                class="button primary">Ссылка на трансляцию Zoom</a>
+            <p>Или отсканируйте QR-код:</p>
+            <div class="qr-code-container">
+                <img src="image/Zoom.png" alt="QR-код для онлайн-трансляции" class="qr-code">
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="registration" class="registration">
+        <div class="container">
+            <h2 class="section-title">Регистрация</h2>
+            <form id="registration-form">
+                <div class="form-group">
+                    <label for="name">Имя:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="group">Группа:</label>
+                    <input type="text" id="group" name="group" required>
+                </div>
+                <div class="form-group">
+                    <label for="group">Email:</label>
+                    <input type="text" id="group" name="group" required>
+                </div>
+                <button type="submit" class="button primary">Зарегистрироваться</button>
+            </form>
+            <div id="registration-message" class="message"></div>
+        </div>
+    </section>
+
+    
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Колледж в VR.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<style>
+    /* Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+body {
+    font-family: 'Roboto', sans-serif; 
+    margin: 0;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.section-list li i {
+    margin-right: 10px; 
+    color: #9b59b6;     
+    font-size: 1.2em;      
+}
+
+/* Logo */
+.logo img {
+    max-height: 120px;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #e8491d;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('image/Снимок\ экрана\ 2025-04-19\ в\ 14.16.37.png') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero .subtitle {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.hero .date {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* General Section Styles */
+.section-title {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+}
+
+.section-description {
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #555;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.list-container {
+    width: 40%;
+    margin: 0 auto; /* Initially centered */
+    transform: translateX(10%);
+}
+
+
+.section-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.2em;
+    color: #555;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  /* Aligns to the left within the container */
+    text-align: left;
+}
+
+.section-list li {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.program .schedule {
+    font-size: 1.2em;
+    color: #555;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  /* Aligns to the left within the container */
+    width: 100%;            /* Make schedule take full width */
+}
+
+.program .schedule p {
+    margin-bottom: 10px;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.program .schedule .time {
+    display: inline-block;
+    width: 120px;
+    font-weight: bold;
+    text-align: left;
+    margin-right: 10px;
+}
+
+/* Location Section */
+.location {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.location-info {
+    font-size: 1.3em;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.location-address {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Registration Section */
+.registration {
+    /* background-color: #f4f4f483; */
+    padding: 50px 0;
+    text-align: center;
+}
+
+.registration form {
+    width: 60%;
+    margin: auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.button.primary {
+    background-color: #9b59b6;
+}
+
+.button:hover {
+    opacity: 0.8;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Messages */
+.message {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Responsive Design */
+@media(max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    header nav {
+        margin-top: 10px;
+    }
+    header nav a {
+        margin: 0 10px;
+    }
+    .registration form {
+        width: 90%;
+    }
+    .section-title {
+        font-size: 2em;
+    }
+    .section-description {
+        font-size: 1em;
+    }
+    .program .schedule {
+        font-size: 1em;
+    }
+    .qr-code {
+        max-width: 150px; 
+    }
+}
+
+.online-stream {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #f4f4f4; 
+}
+
+.online-stream .container {
+    width: 70%; 
+    margin: auto;
+}
+
+.online-stream .section-title {
+    color: #000; 
+    margin-bottom: 20px;
+}
+
+.online-stream p {
+    font-size: 1.2em;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+/* QR Code Styling */
+.qr-code-container {
+    margin-top: 20px;
+}
+
+.qr-code {
+    max-width: 200px; /* Ограничение размера QR-кода */
+    height: auto;
+    border: 5px solid #fff; /* Белая рамка вокруг QR-кода */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для выделения */
+}
+
+
+
+</style>
